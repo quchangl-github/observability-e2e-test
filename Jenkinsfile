@@ -55,7 +55,7 @@ pipeline {
                     /usr/local/bin/yq e -i '.options.hub.name="'"\$HUB_CLUSTER_NAME"'"' resources/options.yaml
                     /usr/local/bin/yq e -i '.options.hub.baseDomain="'"\$BASE_DOMAIN"'"' resources/options.yaml
                     cat resources/options.yaml
-                    ginkgo --focus="addon/g0" -v pkg/tests/ -- -options=../../resources/options.yaml -v=5
+                    ginkgo -v pkg/tests/ -- -options=../../resources/options.yaml -v=5
                 fi
                 """
             }
